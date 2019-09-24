@@ -13,7 +13,7 @@ import java.io.OutputStream;
 public class StreamUtils {
 	
 	/**
-	 * ¹Ø±ÕÁ÷
+	 * éæŠ½æ£´å¨´ï¿½
 	 * @param closeables
 	 * @throws IOException 
 	 */
@@ -36,7 +36,7 @@ public class StreamUtils {
 		while(is.read(b)>0) {
 			os.write(b);
 		}
-		//Ë¢ĞÂ
+		//é’é”‹æŸŠ
 		os.flush();
 		
 	}

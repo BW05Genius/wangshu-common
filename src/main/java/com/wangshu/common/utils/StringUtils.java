@@ -11,23 +11,6 @@ import java.util.regex.Pattern;
  */
 public class StringUtils {
 	
-	/**
-	 * 
-	 * @param src
-	 * @return
-	 */
-	public static String toHtml(String src) {
-		
-		String[] strings = src.split("\\\\n");
-		StringBuilder sb = new StringBuilder();
-		for (String string : strings) {
-			sb.append("<p>").append(string).append("</p>");
-		}
-		return sb.toString();
-		
-		
-		
-	}
 	
 	/**
 	 *  
@@ -41,14 +24,14 @@ public class StringUtils {
 	
 	
 	/**
-	 * ÊÇ·ñÓĞÖµ
-	ÅĞ¶ÏÔ´×Ö·û´®ÊÇ·ñÓĞÖµ£¬¿ÕÒıºÅºÍ¿Õ¸ñÒ²ËãÃ»Öµ
+	 * é„îˆšæƒéˆå¤Šï¿½ï¿½
+	é’ã‚†æŸ‡å©§æ„¬ç“§ç»—ï¸¿è¦†é„îˆšæƒéˆå¤Šï¿½ç¡·ç´ç»Œå“„ç´©é™å³°æ‹°ç»Œçƒ˜ç‰¸æ¶”ç†ºç•»å¨Œâ€³ï¿½ï¿½
 	 * @param str
 	 * @return
 	 */
-	public static boolean isHasValue(String str) {
+	public static boolean hasText1(String str) {
 		
-		// ÒÔÏÂÁ½ÖÖĞ´·¨¶¼¶Ô
+		// æµ ãƒ¤ç¬…æ¶“ã‚‡î’éæ¬ç¡¶é–®è—‰î‡®
 		//return !(null ==str || "".equals(str.trim()));
 		return (null !=str && !"".equals(str.trim()));
 	}
@@ -57,7 +40,7 @@ public class StringUtils {
 	 * @param str
 	 * @return
 	 */
-	public static boolean isTelephone(String str) {
+	public static boolean isPhone(String str) {
 		String pattern = "^(136|135|137)\\d{8}$";
 		return str.matches(pattern);
 	}
@@ -76,7 +59,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * ÑéÖ¤È«Îª×ÖÄ¸
+	 * æ¥ å²ƒç˜‰éã„¤è´Ÿç€›æ¥ç˜
 	 * @param str
 	 * @return
 	 */
@@ -87,7 +70,7 @@ public class StringUtils {
 	
 	/**
 	 * 
-	 * »ñÈ¡nÎ»Ëæ»úÓ¢ÎÄ×Ö·û´®
+	 * é‘¾å³°å½‡næµ£å¶‰æ®¢éˆé¸¿å«³é‚å›§ç“§ç»—ï¸¿è¦†
 	 * @param n
 	 * @return
 	 */
@@ -106,7 +89,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * »ñÈ¡nÎ»Ëæ»úÓ¢ÎÄºÍÊı×Ö×Ö·û´®
+	 * é‘¾å³°å½‡næµ£å¶‰æ®¢éˆé¸¿å«³é‚å›§æ‹°éæ¿ç“§ç€›æ¥ƒîƒæ¶“ï¿½
 	 * @param n
 	 * @return
 	 */
@@ -115,17 +98,17 @@ public class StringUtils {
 		char chars[]= {'0','1','2','3','4','5','6','7','8','9',
 				'A','B','C','D','E','F','G','H','I','J','K','L','M','N'};
 		
-		// ¶¨Òå¸öËæ»ú¶ÔÏó
+		// ç€¹æ°«ç®Ÿæ¶“îˆæ®¢éˆå“„î‡®ç’ï¿½
 		Random random = new Random();
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i=0;i<n;i++) {
-			// Ëæ»úµÃµ½Ò»¸öÏÂ±ê£¬¸ù¾İÏÂ±ê´ÓÊı×éµ±ÖĞ»ñÈ¡Öµ£¬Æ´½Óµ½×Ö·û´®ÉÏ
+			// é—…å¿”æº€å¯°æ¥€åŸŒæ¶“ï¿½æ¶“îƒç¬…éå›·ç´éè§„åµæ¶“å¬«çˆ£æµ åº¢æšŸç¼å‹«ç¶‹æ¶“î…¡å¹é™æ §ï¿½ç¡·ç´é·å…¼å¸´é’æ¿ç“§ç»—ï¸¿è¦†æ¶“ï¿½
 			
-			// Ëæ»ú»ñÈ¡Ò»¸öÏÂ±ê
+			// é—…å¿”æº€é‘¾å³°å½‡æ¶“ï¿½æ¶“îƒç¬…éï¿½
 			int index = random.nextInt(chars.length);
 			char c = chars[index];
-			sb.append(c);//ÏòºóÆ´½Ó
+			sb.append(c);//éšæˆæ‚—é·å…¼å¸´
 			
 			/*sb.append( chars[random.nextInt(chars.length)]
 					);*/
@@ -135,7 +118,7 @@ public class StringUtils {
 		
 	}
 	
-	//»ñÈ¡n¸öËæ»úÖĞÎÄ×Ö·û´®
+	//é‘¾å³°å½‡næ¶“îˆæ®¢éˆè½°è…‘é‚å›§ç“§ç»—ï¸¿è¦†
 	public static String getRandonCnStr(int n) {
 		
 		StringBuilder sb = new StringBuilder();
@@ -147,7 +130,7 @@ public class StringUtils {
 	} 
 	
 	/**
-	 * Ëæ»ú»ñÈ¡Ò»¸öÖĞÎÄ×Ö·û
+	 * é—…å¿”æº€é‘¾å³°å½‡æ¶“ï¿½æ¶“îƒè…‘é‚å›§ç“§ç»—ï¿½
 	 * @return
 	 */
 	private static String getOneCn(){
@@ -168,19 +151,19 @@ public class StringUtils {
             str = new String(b, "GBK");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("´íÎó");
+            System.out.println("é–¿æ¬’î‡¤");
         }
 
         return str;
 	}
 	
 	/*
-	* ·½·¨¹¦ÄÜ£º¸ù¾İÕıÔòÔÚ×Ö·û´®ÌáÈ¡Ò»¶ÎÖµ£¬ÓÃÓÚºóÃæÔÚurlµØÖ·ÀïÌáÈ¡IDÖµ¡£
-	* ÀıÈçÔÚ¡°http://news.cnstock.com/news,yw-201908-4413224.htm¡±°Ñ¡°4413224¡±ÌáÈ¡³öÀ´¡£
+	* é‚è§„ç¡¶é”ç†»å…˜é”›æ°­ç‰´é¹î†½î„œé’æ¬æ¹ªç€›æ¥ƒîƒæ¶“å‰å½é™æ ¦ç«´å¨ˆé›ï¿½ç¡·ç´é¢ã„¤ç°¬éšåº¨æ½°é¦â•±rlé¦æ¿æ½ƒé–²å±¾å½é™æœ“DéŠç¬ºï¿½ï¿½
+	* æ¸šå¬ªî›§é¦ã„¢ï¿½æ¸‰ttp://news.cnstock.com/news,yw-201908-4413224.htméˆ¥æ¿‡å¦¸éˆ¥ï¿½4413224éˆ¥æ¿‡å½é™æ §åš­é‰ãƒ£ï¿½ï¿½
 	*/
 	public static String getPlaceholderValue(String src, String regex){
-		//TODO ÊµÏÖ´úÂë
-        Pattern pattern = Pattern.compile(regex);// Æ¥ÅäµÄÄ£Ê½  
+		//TODO ç€¹ç‚µå¹‡æµ ï½‡çˆœ
+        Pattern pattern = Pattern.compile(regex);// é–å½’å¤é¨å‹¬Äå¯®ï¿½  
         Matcher m = pattern.matcher(src);  
         boolean find = m.find();
         if(find) {
@@ -190,7 +173,7 @@ public class StringUtils {
         return "";
 	}
 	
-	//²âÊÔ¹¤¾ß°üÖĞisNumber()£¬
+	//å¨´å¬­ç˜¯å®¸ãƒ¥å¿é–å‘¬è…‘isNumber()é”›ï¿½
 	/**
 	 * 
 	 * @param src
@@ -205,8 +188,8 @@ public class StringUtils {
 	}
 	
 	/**
-	 * ²âÊÔ¹¤¾ß°üÖĞhasText()£¬¸Ã·½·¨ÊÇ¹ıÂËString²ÎÊı¿Õ¸ñºóÅĞ¶ÏÊÇ·ñÓĞÖµ£¬
-	 * Èç¹ûÄãÓĞ¸Ã¹¦ÄÜ·½·¨£¬µ«²»ÊÇÕâ¸ö·½·¨Ãû²»¿Û·Ö¡£Èç¹ûÃ»ÓĞ¸Ã·½·¨£¬±ØĞëÏÖÔÚ±àĞ´¸Ã·½·¨
+	 * å¨´å¬­ç˜¯å®¸ãƒ¥å¿é–å‘¬è…‘hasText()é”›å²ƒî‡šé‚è§„ç¡¶é„îˆç¹ƒå©Šî—¹tringé™å‚›æšŸç»Œçƒ˜ç‰¸éšåº¡å½é‚î…Ÿæ§¸éšï¸½æ¹éŠç¡·ç´
+	 * æ¿¡å‚›ç‰æµ£çŠ³æ¹ç’‡ãƒ¥å§›é‘³èŠ¥æŸŸå¨‰æ›ªç´æµ£å—•ç¬‰é„îˆç¹–æ¶“î…æŸŸå¨‰æ›æ‚•æ¶“å¶†å¢¸é’å—ï¿½å‚šî›§é‹æ»„ç—…éˆå¤î‡šé‚è§„ç¡¶é”›å±½ç¹€æ¤¤è¤å¹‡é¦ã„§ç´ªéæ¬’î‡šé‚è§„ç¡¶
 	 * @param src
 	 * @return
 	 */
@@ -214,7 +197,36 @@ public class StringUtils {
 		String string = src.replaceAll("\\s", "");
 		return (!"".equals(string));
 	}
-	
+	/*é‚è§„ç¡¶é”ç†»å…˜é”›æ°¬çš¢ç€›æ¥ƒîƒæ¶“èŒ¶æµ†é¹ãˆ¡åšhtmlé‚å›¨æ¹°é”›å±½î›§é‹æ»ˆäº£é’æ‰³ï¿½æ·ºnéˆ¥æ¿‡å´²ç›å±¾å´²ç»—ï¸¼ç´é’æ¬’î›¦çå—šç¹–æ¶“ï¿½å¨ˆå«æƒéˆîƒ¿å¨‡é¢ï¿½<p></p>éå›©î„·
+	 * @ContextConfiguration("classpath:spring.xml")
+	*@RunWith(SpringRunner.class)
+	* é–å‘°æ£é‰ãƒ£ï¿½å‚šî›§é‹æ»ˆäº£é’æ‰³ï¿½æ·ºn\réˆ¥æ¿…è¢±æ¶“î„æ¹ªæ¶“ï¿½ç’§é”‹å¯œæ¶“å©‡æ½°\næ¾¶å‹­æ‚ŠéŠ†å‚šî›§é‹æ»ƒå½§é–¬å›§åŸŒæ¶“ï¿½æ¶“îï¿½æ·ºréˆ¥æ¿†å¯é‡æŒå´²é´ï¿½<br/>éå›©î„·éŠ†ï¿½
+	* æµ£è·¨æ•¤é¦çƒ˜æ«™é”›æ°±ç¶‰æ¤¤å«æƒéˆî„î”‹æµ¼çŠ²åŸŒéšåº¡å½´é¨å‹«ç“§ç»—ï¸¿è¦†çåå½²é‘³è—‰æ°¨æµ¼æ°¬æ´–æï¸½å´²ç›å±»ï¿½ï¿½*/
+	public static String toHtml1(String src){
+		String[] strings = src.split("\\\n");
+		StringBuilder sb = new StringBuilder();
+		for (String string : strings) {
+			sb.append("<p>").append(string).append("</p>");
+		}
+		return sb.toString();
+	}
+	/**
+	 * å¦«ï¿½å¨´å¬ªæƒˆéˆå¡¡n\r æî„å´²é´æ€½n
+	 * \r æî„å´²<br>
+	 * @param str
+	 * @return
+	 */
+	public static String toHtml(String str) {
+		String replaceAll = str.replaceAll("\\\n\r", "\n");
+		String replaceAll2 = replaceAll.replaceAll("\\\r", "<br/>");
+		/* System.out.println(replaceAll2); */
+		String[] split = replaceAll2.split("\\\n");
+		StringBuilder sb = new StringBuilder();
+		for (String string : split) {
+			sb.append("<p>").append(string).append("</p>\n");
+		}
+		return sb.toString();	
+	}
 	
 	
 	

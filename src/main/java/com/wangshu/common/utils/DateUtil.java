@@ -21,7 +21,7 @@ public class DateUtil {
 	}
 	
 	/**
-	 * 3.4.4ÅĞ¶ÏÊÇ·ñÎªµ±Ìì
+	 * 3.4.4é’ã‚†æŸ‡é„îˆšæƒæ¶“å“„ç¶‹æ¾¶ï¿½
 	 * @param date
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public class DateUtil {
 	
 	
 	/**
-	 * 3.4.4ÅĞ¶ÏÊÇ·ñÎªµ±ÔÂ
+	 * 3.4.4é’ã‚†æŸ‡é„îˆšæƒæ¶“å“„ç¶‹éˆï¿½
 	 * @param date
 	 * @return
 	 */
@@ -50,7 +50,7 @@ public class DateUtil {
 	}
 	
 	/**
-	 * 3.4.7¸ø¶¨Ê±¼ä¶ÔÏó£¬³õÊ¼»¯µ½¸ÃÔÂ³õµÄ1ÈÕ0Ê±0·Ö0Ãë0ºÁÃë
+	 * 3.4.7ç¼æ¬ç•¾éƒå •æ£¿ç€µç¡…è–„é”›å±½åµæ¿®å¬ªå¯²é’æ‹Œî‡šéˆå åµé¨ï¿½1éƒï¿½0éƒï¿½0é’ï¿½0ç»‰ï¿½0å§£î‚¤î—
 	 * @return
 	 * @throws ParseException 
 	 */
@@ -64,7 +64,7 @@ public class DateUtil {
 	
 	
 	/**
-	 * 3.4.7¸ø¶¨Ê±¼ä¶ÔÏó£¬³õÊ¼»¯µ½¸ÃÔÂÄ©µÄ×îºóÒ»Ãë  ±ÈÈç 2019/11/30 23:59:59 
+	 * 3.4.7ç¼æ¬ç•¾éƒå •æ£¿ç€µç¡…è–„é”›å±½åµæ¿®å¬ªå¯²é’æ‹Œî‡šéˆå Ÿæ¹¯é¨å‹¬æ¸¶éšåºç«´ç»‰ï¿½  å§£æ–¿î›§ 2019/11/30 23:59:59 
 	 * @return
 	 * @throws ParseException 
 	 */
@@ -102,12 +102,12 @@ public class DateUtil {
 		Calendar instance = Calendar.getInstance();
 		instance.setTime(birthday);
 		
-		//µÃµ½³öÉúµÄÄê
+		//å¯°æ¥€åŸŒé‘è™¹æ•“é¨å‹«å‹¾
 		int birthYear = instance.get(Calendar.YEAR);
 		int birthMonth = instance.get(Calendar.MONTH);
 		int birthDate = instance.get(Calendar.DAY_OF_MONTH);
 		
-		//»ñÈ¡µ±Ç°µÄÄêÔÂÈÕ
+		//é‘¾å³°å½‡è¤°æ’³å¢ é¨å‹«å‹¾éˆå Ÿæ£©
 		instance.setTime(new Date());
 		int currentYear = instance.get(Calendar.YEAR);
 		int currentMonth = instance.get(Calendar.MONTH);
