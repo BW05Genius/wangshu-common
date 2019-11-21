@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 
 /**
  * 
- * @author zhuzg
+ * @author 王澍
  *
  */
 public class FileUtil {
@@ -120,6 +120,7 @@ public class FileUtil {
 	/**
 	 * 浣跨敤宸ュ叿鍖呭伐绋嬩腑鐨勬祦宸ュ叿绫昏鍙栬鏂囨湰鏂囦欢锛屼笖涓嶅緱涔辩爜銆傚鏋滆緭鍏ユ祦浣跨敤浜咶ileInputStream
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked", "resource" })
 	public static List fileToBean(String fileName, Constructor constructor)
 			throws IOException, NoSuchMethodException, SecurityException,
 			InstantiationException, IllegalAccessException,
@@ -130,7 +131,7 @@ public class FileUtil {
 		String lineString = null;
 		List list = new ArrayList();
 		while ((lineString = bufferedReader.readLine()) != null) {
-			String[] split = lineString.split("\\|\\|");
+			String[] split = lineString.split("\\=\\=");
 			Object object = constructor.newInstance(split);
 			list.add(object);
 		}
